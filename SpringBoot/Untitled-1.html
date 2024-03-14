@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>计算比率</title>
+</head>
+<body>
+    <h2>输入初始值</h2>
+    <input type="number" id="input1" placeholder="初始值1">
+    <input type="number" id="input2" placeholder="初始值2">
+    <button onclick="calculate()">计算</button>
+    <br>
+    <input type="number" id="result" placeholder="递增值">
+    <script>
+        function calculate() {
+            var input1 = document.getElementById("input1").value;
+            var input2 = document.getElementById("input2").value;
+            // 判断输入是否为空
+            if (input1 === "" || input2 === "") {
+                alert("请输入初始值");
+                return;
+            }
+            // 将初始值转换为数字
+            input1 = parseFloat(input1);
+            input2 = parseFloat(input2);
+            // 计算差值
+            var diff1 = input1 - 1;
+            var diff2 = input2 - 2;
+            // 计算比率
+            var ratio = (diff1 / diff2).toFixed(2);
+            // 更新结果输入框
+            document.getElementById("result").value = ratio;
+        }
+    </script>
+</body>
+</html>
